@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+.content-block {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    min-height: 50vh;
+    min-width:  40vw;
+    height: 50vh;
+    width:  40vw;
+    background-color: white;
+    border-radius: 0 30px 30px 0;
+}
+
+.headers{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+
+h1 {
+    display: grid;
+    justify-self: left;
+    padding-left: 2vw;
+    color: #68576f;
+    font-family: 'Roboto';
+    font-size: 32px; /* add this line to set the font size */
+    grid-row: 1;
+    font-weight: bold;
+    margin: 0;
+    margin-top: 5vh;
+}
+
+
+p {
+    display: grid;
+    justify-self: left;
+    padding-left: 2vw;
+    color: #68576f;
+    font-family: 'Roboto';
+    font-size: 20px;
+    grid-row: 1;
+    font-weight: 300;
+    margin: 0;
+    margin-top: 0px;
+}

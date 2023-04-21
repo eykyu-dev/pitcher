@@ -1,0 +1,11 @@
+.main-block{
+    display: flex;
+}
+
+.sidebar{
+    order: 1;
+}
+
+.content{
+    order: 2;
+}
