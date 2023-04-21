@@ -17,30 +17,37 @@
     text-align: left;
 }
 
+.buttons{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+
+.button-titles{
+    display: flex;
+    align-items: center;
+}
+
 
 h1 {
     display: grid;
     justify-self: left;
-    padding-left: 2vw;
     color: #68576f;
     font-family: 'Roboto';
     font-size: 32px; /* add this line to set the font size */
-    grid-row: 1;
     font-weight: bold;
     margin: 0;
-    margin-top: 5vh;
+    padding: 0;
 }
 
 
 p {
     display: grid;
     justify-self: left;
-    padding-left: 2vw;
     color: #68576f;
     font-family: 'Roboto';
     font-size: 20px;
-    grid-row: 1;
     font-weight: 300;
     margin: 0;
-    margin-top: 0px;
+    padding: 0;
 }

@@ -1,0 +1,20 @@
+.title {
+    color: #68576f;
+    font-family: 'Roboto';
+    font-size: 30px; /* add this line to set the font size */
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+.desc {
+
+    color: #68576f;
+    font-family: 'Roboto';
+    font-size: 20px; /* add this line to set the font size */
+    font-weight: 500;
+    text-align: center;
+    word-break: 10px;
+    margin: 0;
+    padding: 0;
+}

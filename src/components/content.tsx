@@ -1,4 +1,5 @@
 import './content.css'
+import ButtonGrid from './ButtonGrid';
 
 function Content(){
     return(
@@ -8,23 +9,16 @@ function Content(){
                 <p>let's check your progress</p>
             </div>
             <div className='graph'>
-
             </div>
             <div className='buttons'>
-                <div className='button-titles'>
-                    <p className='text'>chords</p>
-                    <p className='text'>notes</p>
-                    <p className='text'>songs</p>
+                <div className='chords'>
+                    <ButtonGrid title="chords" desc="practice multiple sets of notes" />
                 </div>
-                <div className='button-descript'>
-                    <p className='descript'>chords</p>
-                    <p className='descript'>notes</p>
-                    <p className='descript'>songs</p>
+                <div className='notes'>
+                    <ButtonGrid title="notes" desc="practice individual notes in a scale" />
                 </div>
-                <div className='button-buttons'>
-                    <button className='button'></button>
-                    <button className='button'></button>
-                    <button className='button'></button>
+                <div className='songs'>
+                    <ButtonGrid title="songs" desc="practice notes in a song" />
                 </div>
             </div>
         </div>
