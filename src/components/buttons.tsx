@@ -1,11 +1,11 @@
-import './ButtonGrid.css'
+import './buttons.css'
 
 interface Props{
     title: string;
     desc: string;
 }
 
-function ButtonGrid(props : Props) {
+function Buttons(props : Props) {
   return (
     <div>
       <p className='title'>{props.title}</p>
@@ -15,4 +15,4 @@ function ButtonGrid(props : Props) {
   );
 }
 
-export default ButtonGrid;
+export default Buttons;

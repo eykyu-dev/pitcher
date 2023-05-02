@@ -1,0 +1,17 @@
+.title {
+    color: #68576f;
+    font-family: 'Roboto';
+    font-size: 26px; 
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+.desc {
+
+    color: #68576f;
+    font-family: 'Roboto';
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+}
