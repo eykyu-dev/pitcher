@@ -1,9 +1,0 @@
-.side-block {
-    display: flex;
-    height: 50vh;
-    width:  11vw;
-    background-color: #eec0c6;
-    background-image: linear-gradient(315deg, #fbc5bc 0%, #fea4a4 74%);
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
-}

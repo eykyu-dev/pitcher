@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+.content-block {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-auto-flow: column;
+    height: 60vh;
+    width:  60vw;
+    background-color: #DCD6F7;
+    border-radius: 30px 30px 30px 30px;
+}
+
+.center{
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.next{
+    margin-top: 5vh;
+}
+
+.fade-in-container {
+    opacity: 0;
+    transition: opacity 1s ease-in;
+  }
+  
+.fade-in-container.visible {
+    opacity: 1;
+}
+
+h1 {
+    display: grid;
+    grid-column: 2;
+    color: #424874;
+    font-family: 'Inter';
+    font-size: 26px;
+    font-weight: 300;
+}
+
+p{
+    display: grid;
+    grid-column: 2;
+    color: #424874;
+    font-family: 'Inter';
+    font-size: 16px;
+    font-weight: 300;
+}
+
+button {
+    background-color: #A6B1E1;
+    border-radius: 8px;
+    border-style: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: "Inter";
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+    outline: none;
+    padding: 10px 15px;
+    margin: 2px;
+  }
+  
+button.active {
+    background-color: #424874;
+}
+
+.layout{
+    justify-content: space-evenly;
+}

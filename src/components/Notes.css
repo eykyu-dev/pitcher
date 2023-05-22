@@ -1,0 +1,23 @@
+
+button {
+  background-color: #A6B1E1;
+  border-radius: 8px;
+  border-style: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: "Inter";
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+  outline: none;
+  padding: 10px 15px;
+  margin: 2px;
+}
+
+button.active {
+  background-color: #424874;
+}
+
+.layout{
+    justify-content: space-evenly;
+}
