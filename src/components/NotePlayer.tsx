@@ -11,7 +11,7 @@ function NotePlayer(props: NotePlayerProps) {
   return (
     <div>
       <h1>please select <br></br>the correct note</h1>
-      <p>you can reclick the play<br></br> button to replay the noise</p>
+      <p>you can replay the sound<br></br> by clicking the play button below.</p>
       <button className='playButton'>
         <img src="src/images/play.png" alt="Play" />
       </button>

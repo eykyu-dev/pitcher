@@ -10,6 +10,8 @@ const Content: React.FC = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const [buttonState, setButtonState] = useState<ButtonState>({
+    A: false,
+    B: false,
     C: false,
     D: false,
     E: false,
