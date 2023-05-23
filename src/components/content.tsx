@@ -1,7 +1,7 @@
 import './content.css';
 import React, { Component, useState, useEffect } from 'react';
 import NoteSelector from './NoteSelector';
-
+import Noteplayer from './NotePlayer';
 interface ButtonState {
   [key: string]: boolean;
 }
@@ -16,7 +16,6 @@ const Content: React.FC = () => {
     F: false,
     G: false,
   });
-
   useEffect(() => {FadeIn()},[currentStep])
 
 
@@ -50,16 +49,14 @@ const Content: React.FC = () => {
     return Object.keys(buttonState).filter((buttonName) => buttonState[buttonName]);
   };
 
-  const steps = [<NoteSelector buttonState={buttonState} toggleButton={toggleButton} handleNext={handleNext}/>, <div><p>test</p></div>]
+  const steps = [<NoteSelector buttonState={buttonState} toggleButton={toggleButton} handleNext={handleNext}/>, <Noteplayer noteList={getPressedButtons()}></Noteplayer>]
 
 
   return (
     <div className='content-block'>
-      <div className='center'>
         <div className={`fade-in-container${isVisible ? '-visible' : ''}`}>
           {steps[currentStep]}
         </div>
-      </div>
     </div>
   );
 };

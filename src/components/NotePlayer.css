@@ -1,0 +1,38 @@
+img{
+    max-width: 3vw;
+    height: auto;
+}
+
+.playButton{
+    background-color: transparent;
+    padding: 0;
+}
+
+
+button {
+    background-color: #A6B1E1;
+    border-radius: 8px;
+    border-style: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: "Inter";
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+    outline: none;
+    padding: 10px 15px;
+    margin: 2px;
+  }
+
+p{
+    display: grid;
+    grid-column: 2;
+    color: #424874;
+    font-family: 'Inter';
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.noteSelector{
+    margin-top: 2vh;
+}
