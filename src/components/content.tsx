@@ -17,17 +17,12 @@ const Content: React.FC = () => {
     G: false,
   });
 
+  useEffect(() => {FadeIn()},[currentStep])
+
+
   const FadeIn = () => {
+    setIsVisible(true);
     const timer = setTimeout(() => {
-      setIsVisible(true);
-    }, 500);
-
-    return () => clearTimeout(timer);
-  };
-
-  const FadeOut = () => {
-    const timer = setTimeout(() => {
-      setIsVisible(false);
     }, 500);
 
     return () => clearTimeout(timer);
@@ -46,8 +41,9 @@ const Content: React.FC = () => {
 
   const handleNext = (): void => {
     setIsVisible(false);
-    setCurrentStep(currentStep + 1);
-    FadeIn();
+    setTimeout(() => {
+      setCurrentStep(currentStep +1);
+    }, 500);
   };
 
   const getPressedButtons = (): string[] => {
