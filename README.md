@@ -1,4 +1,4 @@
-# ![alt text](https://github.com/eykyu-dev/payme-website/blob/main/assets/dashboard.png)
+# ![alt text](https://github.com/eykyu-dev/pitcher/blob/main/assets/dashboard-2.png?raw=true)
 # Pitcher - Pitch Training Application
 
 Pitcher is a pitch training application developed by Ethan Yu and Dustin Santoso. It is built using React with TypeScript, and features a RESTful API and Express.js backend. The application is designed to help users improve their pitching skills and is accompanied by intuitive UX/UI designs created by Ethan Yu.
