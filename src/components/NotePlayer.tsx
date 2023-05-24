@@ -25,11 +25,18 @@ function NotePlayer(props: NotePlayerProps) {
   }, [noteList]);
 
 
-  const handleButtonClick = (button: string) => {
-    setButtonState((prevButtonState) => ({
-      ...prevButtonState,
-      [button]: !prevButtonState[button],
-    }));
+  const handleButtonClick = (buttonName: string): void => {
+    // Check if the button is currently selected
+    const isButtonSelected = buttonState[buttonName];
+  
+    // Only toggle the button if it's not selected
+    if (!isButtonSelected) {
+      playSound(buttonName);
+      setButtonState((prevState) => ({
+        ...prevState,
+        [buttonName]: !prevState[buttonName],
+      }));
+    }
   };
 
   useEffect(() => {
@@ -78,7 +85,6 @@ function NotePlayer(props: NotePlayerProps) {
               key={noteItem}
               className={`noteButton ${buttonState[noteItem] ? 'correct' : ''}`}
               onClick={() => {
-                playSound(noteItem);
                 handleButtonClick(noteItem);
                 setTimeout(() => {
                   const randomIndex = Math.floor(Math.random() * noteList.length);
@@ -96,7 +102,6 @@ function NotePlayer(props: NotePlayerProps) {
               key={noteItem}
               className={`noteButton ${buttonState[noteItem] ? 'active' : ''}`}
               onClick={() => {
-                playSound(noteItem);
                 handleButtonClick(noteItem);
               }}
             >

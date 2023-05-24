@@ -1,5 +1,6 @@
 // NoteSelector.tsx
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import './NoteSelector.css'
 
 interface ButtonState {
     [key: string]: boolean;
@@ -12,6 +13,13 @@ interface NoteSelectorProps {
 }
 
 const NoteSelector: React.FC<NoteSelectorProps> = ({ buttonState, toggleButton, handleNext }) => {
+  const [isNextButtonVisible, setIsNextButtonVisible] = useState(false);
+
+  useEffect(() => {
+    const selectedButtonsCount = Object.values(buttonState).filter((selected) => selected).length;
+    setIsNextButtonVisible(selectedButtonsCount >= 2);
+  }, [buttonState]);
+
   return (
     <div>
         <h1>hi. let's get you <br></br>perfect pitch</h1>
@@ -41,7 +49,7 @@ const NoteSelector: React.FC<NoteSelectorProps> = ({ buttonState, toggleButton, 
             G
         </button>
         </div>
-        <button className='next' onClick={handleNext}>Next</button>
+        <button className="next" onClick={handleNext} style={{ display: isNextButtonVisible ? '' : 'none' }}>Next</button>
     </div>
   );
 };

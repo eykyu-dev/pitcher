@@ -15,10 +15,6 @@
     grid-row: 2;
 }
 
-.next{
-    margin-top: 5vh;
-}
-
 .fade-in-container {
     grid-column: 2;
     grid-row: 2;
@@ -73,4 +69,9 @@ button.active {
 
 .layout{
     justify-content: space-evenly;
+}
+
+.next{
+    grid-row: 3;
+    margin-top: 5vh;
 }
