@@ -19,7 +19,7 @@ function NotePlayer(props: NotePlayerProps) {
     const randomNote = noteList[randomIndex];
     setNote(randomNote);
 
-    const sound = new Audio(`src/Sounds/${randomNote}.wav`);
+    const sound = new Audio(`assets/${randomNote}.wav`);
     sound.play();
 
     setIsPlaying(true);
