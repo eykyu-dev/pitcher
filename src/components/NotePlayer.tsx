@@ -5,6 +5,10 @@ interface NotePlayerProps {
   noteList: string[];
 }
 
+interface ButtonState {
+    [key: string]: boolean;
+  }
+  
 function NotePlayer(props: NotePlayerProps) {
   const { noteList } = props;
   const [note, setNote] = useState('');
