@@ -24,15 +24,6 @@ button {
     margin: 2px;
   }
 
-p{
-    display: grid;
-    grid-column: 2;
-    color: #424874;
-    font-family: 'Inter';
-    font-size: 16px;
-    font-weight: 300;
-}
-
 .noteSelector{
-    margin-top: 2vh;
+    margin-top: 5vh;
 }
