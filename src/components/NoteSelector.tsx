@@ -14,7 +14,7 @@ interface NoteSelectorProps {
 const NoteSelector: React.FC<NoteSelectorProps> = ({ buttonState, toggleButton, handleNext }) => {
   return (
     <div>
-        <h1>hi. let's get you, <br></br>perfect pitch</h1>
+        <h1>hi. let's get you <br></br>perfect pitch</h1>
         <p>please select the notes<br></br> you'd like to practice.</p>
         <div className='layout'>
           <button className={buttonState.A ? 'active' : ''} onClick={() => toggleButton('A')}>
