@@ -3,16 +3,34 @@ import './NotePlayer.css';
 
 interface NotePlayerProps {
   noteList: string[];
+  handleNext: () => void;
 }
 
 interface ButtonState {
     [key: string]: boolean;
   }
-  
+
 function NotePlayer(props: NotePlayerProps) {
   const { noteList } = props;
   const [note, setNote] = useState('');
   const [isPlaying, setIsPlaying] = useState(false);
+  const [buttonState, setButtonState] = useState<ButtonState>({});
+
+  useEffect(() => {
+    const initialButtonState: ButtonState = {};
+    noteList.forEach((button) => {
+      initialButtonState[button] = false;
+    });
+    setButtonState(initialButtonState);
+  }, [noteList]);
+
+
+  const handleButtonClick = (button: string) => {
+    setButtonState((prevButtonState) => ({
+      ...prevButtonState,
+      [button]: !prevButtonState[button],
+    }));
+  };
 
   useEffect(() => {
     const randomIndex = Math.floor(Math.random() * noteList.length);
@@ -21,9 +39,6 @@ function NotePlayer(props: NotePlayerProps) {
 
     const sound = new Audio(`assets/${randomNote}.wav`);
     sound.play();
-
-    setIsPlaying(true);
-
     // Clean up the audio element when the component unmounts or when a new note is selected
     return () => {
       sound.pause();
@@ -32,7 +47,7 @@ function NotePlayer(props: NotePlayerProps) {
   }, []);
 
   const replaySound = () => {
-    const sound = new Audio(`src/Sounds/${note}.wav`);
+    const sound = new Audio(`assets/${note}.wav`);
     sound.play();
 
     setIsPlaying(true);
@@ -41,6 +56,11 @@ function NotePlayer(props: NotePlayerProps) {
       setIsPlaying(false);
     });
   };
+  
+  function playSound(toPlay: string): void{
+    const sound = new Audio(`assets/${toPlay}.wav`);
+    sound.play();
+  }
 
   const playButtonImage = isPlaying ? 'pause.png' : 'play.png';
 
@@ -52,11 +72,44 @@ function NotePlayer(props: NotePlayerProps) {
         <img src={`images/${playButtonImage}`} alt="Play" />
       </button>
       <div className="noteSelector">
-        {noteList.map((noteItem) => (
-          <button key={noteItem} className="noteButton">
-            {noteItem}
-          </button>
-        ))}
+        {noteList.map((noteItem) =>
+          note === noteItem ? (
+            <button
+              key={noteItem}
+              className={`noteButton ${buttonState[noteItem] ? 'correct' : ''}`}
+              onClick={() => {
+                playSound(noteItem);
+                handleButtonClick(noteItem);
+                setTimeout(() => {
+                  playSound(note);
+                }, 1000);
+                setTimeout(() => {
+                  const randomIndex = Math.floor(Math.random() * noteList.length);
+                  const randomNote = noteList[randomIndex];
+                  setNote(randomNote);
+                  props.handleNext()
+                }, 200);
+
+              }}
+            >
+              {noteItem}
+            </button>
+          ) : (
+            <button
+              key={noteItem}
+              className={`noteButton ${buttonState[noteItem] ? 'active' : ''}`}
+              onClick={() => {
+                playSound(noteItem);
+                handleButtonClick(noteItem);
+                setTimeout(() => {
+                  playSound(note);
+                }, 1000);
+              }}
+            >
+              {noteItem}
+            </button>
+          )
+        )}
       </div>
     </div>
   );
