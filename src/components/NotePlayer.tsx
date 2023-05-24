@@ -81,9 +81,6 @@ function NotePlayer(props: NotePlayerProps) {
                 playSound(noteItem);
                 handleButtonClick(noteItem);
                 setTimeout(() => {
-                  playSound(note);
-                }, 1000);
-                setTimeout(() => {
                   const randomIndex = Math.floor(Math.random() * noteList.length);
                   const randomNote = noteList[randomIndex];
                   setNote(randomNote);
@@ -101,9 +98,6 @@ function NotePlayer(props: NotePlayerProps) {
               onClick={() => {
                 playSound(noteItem);
                 handleButtonClick(noteItem);
-                setTimeout(() => {
-                  playSound(note);
-                }, 1000);
               }}
             >
               {noteItem}
