@@ -37,7 +37,7 @@ function NotePlayer(props: NotePlayerProps) {
     const randomNote = noteList[randomIndex];
     setNote(randomNote);
 
-    const sound = new Audio(`assets/${randomNote}.wav`);
+    const sound = new Audio(`public/assets/${randomNote}.wav`);
     sound.play();
     // Clean up the audio element when the component unmounts or when a new note is selected
     return () => {
@@ -47,7 +47,7 @@ function NotePlayer(props: NotePlayerProps) {
   }, []);
 
   const replaySound = () => {
-    const sound = new Audio(`assets/${note}.wav`);
+    const sound = new Audio(`public/assets/${note}.wav`);
     sound.play();
 
     setIsPlaying(true);
@@ -58,7 +58,7 @@ function NotePlayer(props: NotePlayerProps) {
   };
   
   function playSound(toPlay: string): void{
-    const sound = new Audio(`assets/${toPlay}.wav`);
+    const sound = new Audio(`public/assets/${toPlay}.wav`);
     sound.play();
   }
 
