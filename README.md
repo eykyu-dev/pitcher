@@ -17,7 +17,7 @@ Pitcher is a pitch training application developed by Ethan Yu. It is built using
 
 To run Pitcher locally, follow these steps:
 
-1. Clone the repository from GitHub: `git clone https://github.com/your-username/pitcher.git`
+1. Clone the repository from GitHub: `git clone https://github.com/eykyu-dev/pitcher.git`
 2. Install the required dependencies by running: `npm install`
 3. Start the development server: `npm start`
 4. Open your web browser and visit: `http://localhost:3000`
