@@ -29,9 +29,6 @@ const Content: React.FC = () => {
     return () => clearTimeout(timer);
   };
 
-  useEffect(() => {
-    FadeIn();
-  }, [])
 
   const toggleButton = (buttonName: string): void => {
     setButtonState((prevState) => ({
