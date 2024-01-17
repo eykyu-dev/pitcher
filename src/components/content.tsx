@@ -6,6 +6,7 @@ interface ButtonState {
   [key: string]: boolean;
 }
 
+
 const Content: React.FC = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
