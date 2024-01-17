@@ -19,6 +19,8 @@ const NoteSelector: React.FC<NoteSelectorProps> = ({ buttonState, toggleButton, 
     setIsNextButtonVisible(selectedButtonsCount >= 2);
   }, [buttonState]);
 
+
+  
   return (
     <div>
         <h1>hi. let's get you <br></br>perfect pitch</h1>
