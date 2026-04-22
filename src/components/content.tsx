@@ -49,22 +49,14 @@ const Content: React.FC = () => {
     return Object.keys(buttonState).filter((buttonName) => buttonState[buttonName]);
   };
 
-  const steps = [<NoteSelector buttonState={buttonState} toggleButton={toggleButton} handleNext={handleNext}/>,
-  <Noteplayer noteList={getPressedButtons()} handleNext={handleNext}></Noteplayer>,
-  <Noteplayer noteList={getPressedButtons()} handleNext={handleNext}></Noteplayer>,
-  <Noteplayer noteList={getPressedButtons()} handleNext={handleNext}></Noteplayer>,
-  <Noteplayer noteList={getPressedButtons()} handleNext={handleNext}></Noteplayer>,
-  <Noteplayer noteList={getPressedButtons()} handleNext={handleNext}></Noteplayer>,
-  <Noteplayer noteList={getPressedButtons()} handleNext={handleNext}></Noteplayer>,
-  <Noteplayer noteList={getPressedButtons()} handleNext={handleNext}></Noteplayer>,
-  <Noteplayer noteList={getPressedButtons()} handleNext={handleNext}></Noteplayer>
-]
-
-
   return (
     <div className='content-block'>
         <div className={`fade-in-container${isVisible ? '-visible' : ''}`}>
-          {steps[currentStep]}
+          {currentStep === 0 ? (
+            <NoteSelector buttonState={buttonState} toggleButton={toggleButton} handleNext={handleNext}/>
+          ) : (
+            <Noteplayer key={currentStep} noteList={getPressedButtons()} handleNext={handleNext}></Noteplayer>
+          )}
         </div>
     </div>
   );
